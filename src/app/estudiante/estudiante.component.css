@@ -1,3 +1,93 @@
-p{
-  padding-top: 5%;
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  overflow: hidden;
+  padding-left: 0px;
+  padding-right: 0px;
+  font-family: 'Open Sans', sans-serif;
+
+}
+.tarjetas{
+  width: 350px;
+  height: 350px;
+  border-radius: 8px;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  overflow: hidden;
+  margin: 10px;
+  transition: all 0.25s;
+  cursor: pointer;
+}
+
+
+.tarjetas:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 12px 16px rgba(0,0,0,0.2);
+}
+
+.tarjetas img{
+  width: 100%;
+  height: 300px;
+}
+
+.tarjetas p{
+  top: 5px;
+  padding-top: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4f6f8e;
+}
+
+/*.tarjetas_descripcion ul{
+  display: block;
+  padding: 0;
+  margin-left: 20px;
+  justify-content: center;
+}
+
+.tarjetas_descripcion li{
+  display: flex;
+}
+.tarjetas_descripcion .li-kilometraje{
+  align-items: flex-start;
+}
+.tarjetas_descripcion-iconos{
+  width: 22px;
+  height: 30px;
+}
+.tarjetas_descripcion-iconos img{
+  width: 20px;
+  height: auto;
+}
+.tar_desc-asientos{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.tarjetas_precio{
+  display: flex;
+  justify-content: center;
+}
+.tarjetas_precio-div1{
+  display: flex;
+  flex-flow: column;
+  padding-right: 10px;
+}
+.tarjetas_precio-div1 h6{
+  margin: auto;
+}
+.tarjetas_precio-div1 p{
+  margin: auto;
+  font-size: 20px;
+  font-weight: bold;
+}*/
+.contenedor_catalogo{
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: center;
+  height: auto;
+  flex-wrap: wrap;
+  margin: auto;
 }

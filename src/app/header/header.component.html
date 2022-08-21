@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 
-<p>
+<div class="container">
   <mat-toolbar class="toolbar">
     <button class="hed"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon class="hed"  [matMenuTriggerFor]="menu">menu</mat-icon>
@@ -17,10 +17,6 @@
         <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="escenario">Escenarios</button>
         <button class="hed" mat-menu-item [matMenuTriggerFor]="ayud">Ayuda</button>
         <button  class="hed" mat-menu-item >Foro</button>
-        <!--button *ngIf="rol=='admin'"  class="hed" (click)="cliente()" mat-menu-item >Clientes</button>
-        <button mat-menu-item *ngIf="rol=='admin'"  class="hed" (click)="catalogo()">Catalogo</button>
-        <button mat-menu-item  *ngIf="rol!=null && rol!='admin'"  class="hed" (click)="pagos()" >Pagos</button>
-        <button mat-menu-item *ngIf="rol!=null"  class="hed" (click)="cerrarSesion()">CerrarSesion</button-->
         </mat-menu>
         <mat-menu #academico="matMenu">
           <button *ngIf="rol==null" class="hed"mat-menu-item >Titulacion</button>
@@ -257,27 +253,5 @@
       <mat-icon *ngIf="rol!=null" (click)="cerrarSesion()">logout</mat-icon>
     </button>
   </mat-toolbar>
-</p>
 
-<!--p>
-  <mat-toolbar color="primary">
-    <mat-toolbar-row>
-      <span>My App</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-        <mat-icon>menu</mat-icon>
-      </button>
-    </mat-toolbar-row>
-
-    <mat-toolbar-row>
-      <span>Second Line</span>
-      <span class="example-spacer"></span>
-      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon>favorite</mat-icon>
-      </button>
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-        <mat-icon>share</mat-icon>
-      </button>
-    </mat-toolbar-row>
-  </mat-toolbar>
-</p-->
+</div>
