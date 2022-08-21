@@ -4,49 +4,249 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
 </head>
 
-<!--mat-toolbar-row class="toolbar">
-  <span>Second Line</span>
-  <span class="example-spacer"></span>
-  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
-
-  <span>Welcome</span>
-  <div class="spacer"></div>
-
-</mat-toolbar-row-->
-<!--p>
-  <mat-toolbar>
-    <span>My Application</span>
-  </mat-toolbar>
-</p>
-
-<p>
-  <mat-toolbar>
-   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span>My App</span>
-  <span class="example-spacer"></span>
-  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-    <mat-icon>favorite</mat-icon>
-  </button>
-  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-   <mat-icon>share</mat-icon>
- </button>
-</mat-toolbar>
-</p-->
-
 <p>
   <mat-toolbar class="toolbar">
     <button class="hed"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon class="hed"  [matMenuTriggerFor]="menu">menu</mat-icon>
       <mat-menu #menu = "matMenu" >
+       
+        <button class="hed" mat-menu-item [matMenuTriggerFor]="academico">Academico</button>
+        <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="financiero">Financiero</button>
+        <button  *ngIf="rol==null" class="hed"mat-menu-item >Talento humano</button>
+        <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="cPublica">Consultas publicas</button>
+        <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="escenario">Escenarios</button>
+        <button class="hed" mat-menu-item [matMenuTriggerFor]="ayud">Ayuda</button>
+        <button  class="hed" mat-menu-item >Foro</button>
         <!--button *ngIf="rol=='admin'"  class="hed" (click)="cliente()" mat-menu-item >Clientes</button>
         <button mat-menu-item *ngIf="rol=='admin'"  class="hed" (click)="catalogo()">Catalogo</button>
         <button mat-menu-item  *ngIf="rol!=null && rol!='admin'"  class="hed" (click)="pagos()" >Pagos</button>
         <button mat-menu-item *ngIf="rol!=null"  class="hed" (click)="cerrarSesion()">CerrarSesion</button-->
-        <button mat-raised-button class="hed" >Aceptar</button>
         </mat-menu>
+        <mat-menu #academico="matMenu">
+          <button *ngIf="rol==null" class="hed"mat-menu-item >Titulacion</button>
+          <button *ngIf="rol==null" class="hed"mat-menu-item >Datos personales censo</button>
+          <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="unidadAcademica">Unidad Academica</button>
+          <button *ngIf="rol!=null" class="hed" mat-menu-item [matMenuTriggerFor]="bibliotecaV">Biblioteca virtual</button>
+          <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="consultaGerencial">Consulta Gerencial</button>
+          <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="procesoSolicitud">Procesesos de Solicitud</button>
+          <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="nivelacion">Nivelacion</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="registroHo">Registro homologacion</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="ayEconomica">Ayudas economicas</button>
+          <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="binEstud">Bienestar estudiantil</button>
+          <button  *ngIf="rol==null" class="hed"mat-menu-item >VIFAB_EVALUATION</button>
+        </mat-menu>
+        <mat-menu #cPublica="matMenu">
+          <button  class="hed"mat-menu-item [matMenuTriggerFor]="academic">Academico</button>
+          <button  class="hed"mat-menu-item [matMenuTriggerFor]="admin">Administrativo</button>
+        </mat-menu>
+        <mat-menu #escenario="matMenu">
+          <button  class="hed"mat-menu-item [matMenuTriggerFor]="adq">Adquisiciones</button>
+          <button  class="hed"mat-menu-item >Activo fijo</button>
+          <button  class="hed"mat-menu-item >Contratos</button>
+          <button  class="hed"mat-menu-item [matMenuTriggerFor]="cserv">Centro de servicios</button>
+        </mat-menu>
+        <mat-menu class="hed" #ayud="matMenu">
+          <button  class="hed"mat-menu-item >Cambio de contraseña</button>
+          <button  class="hed"mat-menu-item >Temas de ayuda</button>
+          <button  class="hed"mat-menu-item >Acerca de</button>
+          <button  *ngIf="rol==null" class="hed"mat-menu-item [matMenuTriggerFor]="info">Administradores/informaticos</button>
 
+        </mat-menu>
+        <mat-menu class="hed" #info="matMenu">
+          <button  class="hed"mat-menu-item >Configuraciones</button>
+          <button  class="hed"mat-menu-item >Inactivar usuario</button>
+        </mat-menu>
+        <mat-menu class="hed" #adq="matMenu">
+          <button  class="hed"mat-menu-item >Plan anual compras publicas</button>
+        </mat-menu>
+        <mat-menu class="hed" #bibliotecaV="matMenu">
+          <button  class="hed"mat-menu-item >Bibliotecas</button>
+          <button  class="hed"mat-menu-item >Consulta de certificados</button>
+          <button  class="hed"mat-menu-item >Estadisticas de acceso</button>
+          <button  class="hed"mat-menu-item >Consulta navegacion</button>
+          <button  class="hed"mat-menu-item >Capacitaciones</button>
+        </mat-menu>
+        <mat-menu class="hed" #cserv="matMenu">
+          <button  class="hed"mat-menu-item >Usuario</button>
+          <button  class="hed"mat-menu-item >Tecnico</button>
+          <button  class="hed"mat-menu-item >Administrador</button>
+        </mat-menu>
+          
+        <mat-menu class="hed" #academic="matMenu">
+          <button  class="hed"mat-menu-item >Seleccion internado medicina</button>
+          <button  class="hed"mat-menu-item >Estadistica matriculacion online</button>
+          <button  class="hed"mat-menu-item >Planificacion academica</button>
+          <button  class="hed"mat-menu-item >Jornada docentes</button>
+          <button  class="hed"mat-menu-item >Reportes varios</button>
+          <button  class="hed"mat-menu-item >Evaluacion docente</button>
+        </mat-menu>
+        <mat-menu class="hed" #admin="matMenu">
+          <button  class="hed"mat-menu-item >Remuneraciones</button>
+          <button  class="hed"mat-menu-item [matMenuTriggerFor]="departTI">Departamento TI</button>
+          <button  class="hed"mat-menu-item [matMenuTriggerFor]="consulPer">Consulta personal</button>
+          <button  class="hed"mat-menu-item >Consultas</button>
+          <button  class="hed"mat-menu-item >Registro inf personal</button>
+        </mat-menu>
+        <mat-menu class="hed" #consulPer="matMenu">
+          <button  class="hed"mat-menu-item >Datos personales</button>
+          <button  class="hed"mat-menu-item >Hitorico calificaciones estudiantes</button>
+          <button  class="hed"mat-menu-item >Datos censo</button>
+          <button  class="hed"mat-menu-item >Datos censo 2017</button>
+          <button  class="hed"mat-menu-item >Consulta fichas medicas</button>
+        </mat-menu>
+        <mat-menu class="hed" #departTI="matMenu">
+          <button  class="hed"mat-menu-item >Requerimientos tecnicos</button>
+        </mat-menu>
+        <mat-menu class="hed" #binEstud="matMenu">
+          <button  class="hed"mat-menu-item >Horarios nocturnos</button>
+        </mat-menu>
+        <mat-menu class="hed" #ayEconomica="matMenu">
+          <button  class="hed"mat-menu-item >Revision de solicitudes</button>
+          <button  class="hed"mat-menu-item >Supervision de solicitudes</button>
+          <button  class="hed"mat-menu-item >Aprobacion de solicitudes</button>
+          <button  class="hed"mat-menu-item >Reportes ayudas economicas</button>
+        </mat-menu>
+        <mat-menu class="hed" #registroHo="matMenu">
+          <button  class="hed"mat-menu-item >Solicitud de homologacion de materia</button>
+          <button  class="hed"mat-menu-item >Validacion nota ENES</button>
+          <button  class="hed"mat-menu-item >Procesa solicitudes homologacion</button>
+        </mat-menu>
+        <mat-menu class="hed" #nivelacion="matMenu">
+          <button  class="hed"mat-menu-item >Cargar estudiantes/MTN</button>
+          <button  class="hed"mat-menu-item >Ingreso nota examen final</button>
+          <button  class="hed"mat-menu-item >Generar nota final</button>
+          <button  class="hed"mat-menu-item >Reportes varios-nivelacion</button>
+          <button  class="hed"mat-menu-item >Generar certificados</button>
+          <button  class="hed"mat-menu-item >Habilitar certificados fecha/periodo</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="anulacionCur">Proceso de anulacin de curso</button>
+        </mat-menu>
+        <mat-menu class="hed" #anulacionCur="matMenu">
+          <button  class="hed"mat-menu-item >Reporte</button>
+          <button  class="hed"mat-menu-item >Revision de documentos</button>
+          <button  class="hed"mat-menu-item >Verificacion de documentos</button>
+          <button  class="hed"mat-menu-item >Aprobacion</button>
+          <button  class="hed"mat-menu-item >Verificacion bienestar</button>
+          <button  class="hed"mat-menu-item >Aprobacion bienestar</button>
+        </mat-menu>
+        <mat-menu #unidadAcademica="matMenu">
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="general">General</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="matriculacion">Matriculacion</button>
+          <button  class="hed"mat-menu-item >Cargar syllabus</button>
+          <button  class="hed"mat-menu-item >Facturacion</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="varios">Varios</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="consultaEstudiante">Consulta estudiante</button>
+          <button  class="hed"mat-menu-item >Internado medicina</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="consultaDocente">Consulta docente</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="autoCalificacion">Autorizacion para calificaciones</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="postgrado">Posgrado</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="homologacion">Homolagacion</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="actasGrado">Actas de grado</button>
+        </mat-menu>
+        <mat-menu #procesoSolicitud="matMenu">
+          <button  class="hed"mat-menu-item >Verificacion de solicitud de bienestar</button>
+          <button  class="hed"mat-menu-item >Verificacion de solicitud </button>
+          <button  class="hed"mat-menu-item >Aprobacion de solicitud </button>
+          <button  class="hed"mat-menu-item >Estadisticas de solicitud </button>
+          <button  class="hed"mat-menu-item >Cambio estado de solicitud </button>
+          <button  class="hed"mat-menu-item >Verificacion solicitud historico </button>
+          <button  class="hed"mat-menu-item >Consulta solicitud </button>
+          <button  class="hed"mat-menu-item >Anulacion solicitud devuelta </button>
+          <button  class="hed"mat-menu-item >Estadisticas solicitud bienestar</button>
+          <button  class="hed"mat-menu-item >Activar solicitud DSV</button>
+          <button  class="hed"mat-menu-item >Verificacion solicitudes homologaciones</button>
+          <button  class="hed"mat-menu-item >Aprobacion solicitudes homologacion </button>
+          <button  class="hed"mat-menu-item >Solicitudes de reingreso</button>
+          <button  class="hed"mat-menu-item >Solicitudes cambio de malla </button>
+          <button  class="hed"mat-menu-item >Solicitudes varias </button>
+        </mat-menu>
+        <mat-menu class="hed" #general="matMenu">
+          <button  class="hed"mat-menu-item >Unidad academica institucion/empresa</button>
+          <button  class="hed"mat-menu-item >Periodo lectico/rubros</button>
+          <button  class="hed"mat-menu-item >Malla</button>
+          <button  class="hed"mat-menu-item >Estudiante</button>
+          <button  class="hed"mat-menu-item >Docente</button>
+          <button  class="hed"mat-menu-item >Reasignacion estudiante grupo/materia</button>
+          <button  class="hed"mat-menu-item >Evaluacion docente</button>
+          <button  class="hed"mat-menu-item >Matrices ceaaces</button>
+          <button  class="hed"mat-menu-item >Registro de matriculas</button>
+        </mat-menu>
+        <mat-menu class="hed" #matriculacion="matMenu">
+          <button  class="hed"mat-menu-item >Nivel online estudiante</button>
+          <button  class="hed"mat-menu-item >Matricula y materia adicional</button>
+        </mat-menu>
+        <mat-menu class="hed" #varios="matMenu">
+          <button  class="hed"mat-menu-item >Libro de matricula</button>
+          <button  class="hed"mat-menu-item >Titulo</button>
+          <button  class="hed"mat-menu-item >Egresados</button>
+          <button  class="hed"mat-menu-item >Padrones</button>
+        </mat-menu>
+        <mat-menu class="hed" #consultaEstudiante="matMenu">
+          <button  class="hed"mat-menu-item >Datos personales</button>
+          <button  class="hed"mat-menu-item >Listados general de documentos pendientes</button>
+          <button  class="hed"mat-menu-item >Calificaciones</button>
+          <button  class="hed"mat-menu-item >Asistencia</button>
+          <button  class="hed"mat-menu-item >Orden de pago</button>
+          <button  class="hed"mat-menu-item >Horario</button>
+          <button  class="hed"mat-menu-item >Asistencias multiples dias</button>
+          <button  class="hed"mat-menu-item >Registro estudiantil</button>
+        </mat-menu>
+        <mat-menu class="hed" #consultaDocente="matMenu">
+          <button  class="hed"mat-menu-item >Horario</button>
+          <button  class="hed"mat-menu-item >Acta de calificaciones estudiantil I parcial</button>
+          <button  class="hed"mat-menu-item >Acta de calificaciones estudiantil II parcial</button>
+          <button  class="hed"mat-menu-item >Acta de calificaciones estudiantil mejora o recupe</button>
+          <button  class="hed"mat-menu-item >Listado de actas entregadas/ no entregadas</button>
+          <button  class="hed"mat-menu-item >Acta de calificaciones(reglamento 50% - 50% y 60% - 40%</button>
+        </mat-menu>
+        <mat-menu class="hed" #autoCalificacion="matMenu">
+          <button  class="hed"mat-menu-item >Autorizacion registrar calificacion semestral</button>
+          <button  class="hed"mat-menu-item >Autorizacion registrar calificacion anual</button>
+          <button  class="hed"mat-menu-item >Apertura registro de calificaciones</button>
+          <button  class="hed"mat-menu-item >Autorizacion para modificar calificacion semestral</button>
+          <button  class="hed"mat-menu-item >Autorizacion registrar calificacion anual</button>
+          <button  class="hed"mat-menu-item >Modificacion de calificaciones semestral</button>
+          <button  class="hed"mat-menu-item >Modificacion de calificaciones anual</button>
+          <button  class="hed"mat-menu-item >Menu emision acta de modificacion notas</button>
+          <button  class="hed"mat-menu-item >Consulta autorizacion apertura de calificaciones</button>
+          <button  class="hed"mat-menu-item >Consulta autorizacion registrar calificacion</button>
+          <button  class="hed"mat-menu-item >Consulta autorizacion modificar calificacion</button>
+          <button  class="hed"mat-menu-item >Registro de asistencia estudiantil</button>
+          <button  class="hed"mat-menu-item >Autorizacion imprimir/reimprimir actas</button>
+        </mat-menu>
+        <mat-menu #postgrado="matMenu">
+          <button  class="hed"mat-menu-item >Historico notas</button>
+        </mat-menu>
+        <mat-menu #homologacion="matMenu">
+          <button  class="hed"mat-menu-item >Validacion de homologacion</button>
+          <button  class="hed"mat-menu-item >Seguimiento de homologacion</button>
+        </mat-menu>
+        <mat-menu #actasGrado="matMenu">
+          <button  class="hed"mat-menu-item >Fecha sustentacion</button>
+          <button  class="hed"mat-menu-item >Añadir excepciones</button>
+          <button  class="hed"mat-menu-item >Fecha aprobacion consejo</button>
+          <button  class="hed"mat-menu-item >Generar acta</button>
+        </mat-menu>
+        <mat-menu #financiero="matMenu">
+          <button  class="hed"mat-menu-item >Horario docente</button>
+          <button  class="hed"mat-menu-item >Planificacion docente</button>
+          <button  class="hed"mat-menu-item >Fecha aprobacion consejo</button>
+          <button  class="hed"mat-menu-item >Censos docente-administrativo</button>
+          <button  class="hed"mat-menu-item >Repositorio de reportes</button>
+          <button  class="hed"mat-menu-item >Generar acta</button>
+        </mat-menu>
+        <mat-menu #consultaGerencial="matMenu">
+          <button class="hed"mat-menu-item >Horario docente</button>
+          <button  class="hed"mat-menu-item >Planificacion academica</button>
+          <button class="hed" mat-menu-item [matMenuTriggerFor]="evaDocente">Evaluacion docente</button>
+          <button class="hed"mat-menu-item >Censos docente-administrativo</button>
+          <button class="hed"mat-menu-item >Repositorios de reportes</button>
+          <button class="hed"mat-menu-item >Asignar docentes homologacion</button>
+        </mat-menu>
+        <mat-menu #evaDocente="matMenu">
+          <button class="hed"mat-menu-item >Resultados</button>
+          <button class="hed"mat-menu-item >Estadisticas</button>
+          <button class="hed"mat-menu-item >Datos</button>
+        </mat-menu>
     </button>
     <span>SIUG</span>
     <span class="example-spacer"></span>
