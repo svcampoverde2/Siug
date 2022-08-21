@@ -12,8 +12,9 @@
 }
 .contenedor .banner{
   width: 100%;
- background-image:url(src/assets/ug.jpg);
+ background-image:url(src/assets/img7.png);
  height: 500px;
+ height: 100vh;
   margin-top: 0px;
   background-size: cover;
   justify-content: center;
