@@ -1,0 +1,83 @@
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+</head>
+
+<!--mat-toolbar-row class="toolbar">
+  <span>Second Line</span>
+  <span class="example-spacer"></span>
+  <mat-icon class="example-icon" aria-hidden="false" aria-label="Example user verified icon">verified_user</mat-icon>
+
+  <span>Welcome</span>
+  <div class="spacer"></div>
+
+</mat-toolbar-row-->
+<!--p>
+  <mat-toolbar>
+    <span>My Application</span>
+  </mat-toolbar>
+</p>
+
+<p>
+  <mat-toolbar>
+   <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>My App</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+   <mat-icon>share</mat-icon>
+ </button>
+</mat-toolbar>
+</p-->
+
+<p>
+  <mat-toolbar class="toolbar">
+    <button class="hed"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon class="hed"  [matMenuTriggerFor]="menu">menu</mat-icon>
+      <mat-menu #menu = "matMenu" >
+        <!--button *ngIf="rol=='admin'"  class="hed" (click)="cliente()" mat-menu-item >Clientes</button>
+        <button mat-menu-item *ngIf="rol=='admin'"  class="hed" (click)="catalogo()">Catalogo</button>
+        <button mat-menu-item  *ngIf="rol!=null && rol!='admin'"  class="hed" (click)="pagos()" >Pagos</button>
+        <button mat-menu-item *ngIf="rol!=null"  class="hed" (click)="cerrarSesion()">CerrarSesion</button-->
+        <button mat-raised-button class="hed" >Aceptar</button>
+        </mat-menu>
+
+    </button>
+    <span>SIUG</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button class="hed">{{rol}}</button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon *ngIf="rol==null" (click)="openDialogSesion()">login</mat-icon>
+      <!--button  mat-raised-button class="hed"(click)="openDialogSesion()">Iniciar Sesion</button-->
+      <mat-icon *ngIf="rol!=null" (click)="cerrarSesion()">logout</mat-icon>
+    </button>
+  </mat-toolbar>
+</p>
+
+<!--p>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>My App</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+      </button>
+    </mat-toolbar-row>
+
+    <mat-toolbar-row>
+      <span>Second Line</span>
+      <span class="example-spacer"></span>
+      <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>favorite</mat-icon>
+      </button>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</p-->

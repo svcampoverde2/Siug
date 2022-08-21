@@ -1,0 +1,129 @@
+
+.container {
+  width: 100%;
+  max-width: 1800px;
+  margin: auto;
+  overflow: hidden;
+  padding: 60px, 0;
+  padding-left: 1px;
+  padding-right: 0px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: 0px;
+}
+.contenedor .banner{
+  width: 100%;
+ background-image:url(src/assets/ug.jpg);
+ height: 500px;
+  margin-top: 0px;
+  background-size: cover;
+  justify-content: center;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  top: 0;
+
+}
+.banner style{
+  width: 100%;
+  height: 100%;
+}
+.llamada {
+  display: flex;
+  flex-direction: column;
+}
+
+.llamada h1 {
+  font-size: 42px;
+  width: 300px;
+  padding: 20px 22px;
+  background-color: rgba(102, 167, 197, 0.7);
+  margin-left: 10px;
+  color: #fff;
+  text-align: center;
+  border-radius: 30px 15px 30px 15px;
+}
+
+.llamada p {
+ padding-top: 150px;
+  padding-bottom: 20px;
+   font-weight: bold;
+   padding-left: 43px;
+  font-size: 22px;
+  color: white;
+
+}
+.llamada a {
+  text-align: center;
+  padding: 10px;
+  margin-left: 80px;
+  /*margin-top: 28px;*/
+  width: 100%;
+  max-width: 190px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #46a2b9;
+  border-radius: 25px;
+  color: #fff;
+  font-weight: bolder;
+ /* letter-spacing: 2px;*/
+  overflow: hidden;
+  transition: 0.2s;
+}
+
+.llamada a:hover {
+  background-color: #285171;
+  box-shadow: 0 0 10px #285171, 0 0 20px #285171, 0 0 40px #285171;
+}
+p{text-align: justify;}
+
+@media(max-width:360px) {
+  .contenedor{
+    width: 100%;
+    height: 250px;
+  }
+  .llamada p{
+    padding-top: 15px;
+
+  }
+  .llamada a{
+    padding-top: 0.10% 0;
+    padding-bottom: 1rem;
+
+  }
+  .llamada h1{
+    padding-top: 3px;
+  }
+
+ /* .container{
+    width: 80%;
+  }*/
+  .img-fluid{
+    max-width: 80%;
+    height: auto;
+  }
+  .info p{
+    width: 100%;
+  }
+  .nosotros .info{
+    width: 100%;
+  }
+}
+@media(max-width:780px) {
+  .contenedor .banner {
+    width: 100%;
+  }
+  .contenedor .banner2{
+  width: 100%;
+  }
+  .img-fluid{
+    max-width: 60%;
+    height: auto;
+  }
+  .info p{
+    width: 100%;
+  }
+  nosotros .info{
+    width: 90%;
+  }
+}

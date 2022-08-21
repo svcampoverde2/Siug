@@ -1,0 +1,39 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+.toolbar {
+   /* position: absolute;*/
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: #1976d2;
+    color: white;
+    font-weight: 600;
+    background-color: #285171;
+    position: sticky;
+    position: -webkit-sticky;
+  }
+  .hed{
+    background-color: #115293;
+    text-decoration: none;
+    color: #fff;
+    transition: background-color .5s;
+  }
+  .hed:hover{
+    transition: background-color .5s;
+    transition: all 0.25s;
+    background-color:#003A6F;
+    overflow: hidden;
+  }
+ /* .toolbar{
+    width: 100%;
+    max-width: 1800px;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    background-color: #285171;
+
+  }*/
