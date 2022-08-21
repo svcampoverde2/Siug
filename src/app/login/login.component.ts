@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     }
     if(this.usuarioLogin.value.usuario=='estudiante' && this.usuarioLogin.value.password=="123")
     {
-      this.set_dato("user","usuario");
+      this.set_dato("user","estudiante");
       this.router.navigate(['/estudiante']);
       this.dialog.close();
     }

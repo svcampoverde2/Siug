@@ -8,7 +8,7 @@
   font-family: 'Open Sans', sans-serif;
 }
 .logo{
-  width: 100px;
+  width: 130px;
   height: 50px;
   cursor: pointer;
 }
@@ -23,10 +23,10 @@
     height: 60px;
     display: flex;
     align-items: center;
-    background-color: #1976d2;
+    /*background-color: #1976d2;*/
     color: white;
     font-weight: 600;
-    background-color: #285171;
+    background-color: #115293;
     position: sticky;
     position: -webkit-sticky;
   }

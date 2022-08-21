@@ -9,7 +9,7 @@
     <button class="hed"  mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon class="hed"  [matMenuTriggerFor]="menu">menu</mat-icon>
       <mat-menu #menu = "matMenu" >
-       
+
         <button class="hed" mat-menu-item [matMenuTriggerFor]="academico">Academico</button>
         <button *ngIf="rol==null" class="hed" mat-menu-item [matMenuTriggerFor]="financiero">Financiero</button>
         <button  *ngIf="rol==null" class="hed"mat-menu-item >Talento humano</button>
@@ -67,7 +67,7 @@
           <button  class="hed"mat-menu-item >Tecnico</button>
           <button  class="hed"mat-menu-item >Administrador</button>
         </mat-menu>
-          
+
         <mat-menu class="hed" #academic="matMenu">
           <button  class="hed"mat-menu-item >Seleccion internado medicina</button>
           <button  class="hed"mat-menu-item >Estadistica matriculacion online</button>
@@ -245,7 +245,7 @@
         </mat-menu>
     </button>
     <span></span>
-    <img class="logo" src="assets/img12.jpg" alt="">
+    <img class="logo" src="assets/img14.jpg" alt="">
     <span class="example-spacer"></span>
     <button mat-raised-button class="hed">{{rol}}</button>
     <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
