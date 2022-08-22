@@ -10,7 +10,7 @@
 <h1 class="h1" mat-dialog-title>Iniciar sesión</h1>
 <mat-card>
   <div mat-dialog-content>
-  <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()">
+  <form [formGroup]="usuarioLogin" (ngSubmit)="onSubmit()" autocomplete="off">
       <mat-form-field class="campos-field">
           <input matInput placeholder="Usuario" formControlName="usuario">
       </mat-form-field>
@@ -18,8 +18,7 @@
       <mat-form-field class="campos-field">
           <input type="password" matInput placeholder="Password" formControlName="password">
       </mat-form-field>
-      <div><br></div><!-- m (click)="agregarUsuario()" -->
-      <!--button mat-raised-button color="accent"  [disabled] = "!usuarioLogin.valid" >Aceptar</button-->
+      <div><br></div>
       <div mat-dialog-action [align]="'end'" class="op">
           <button mat-raised-button class="hed" (click)="agregarUsuario()" >Aceptar</button>
           <button style="margin-left: 8px;" mat-raised-button color="warn" mat-dialog-close>Cancelar</button>
@@ -31,10 +30,10 @@
 
 
 <br>
-  <!--div class="new">
-<button mat-raised-button class="hed" (click)="openDialogAgregar()" (click)="agregarUsuario()">Crear cuenta</button>
+  <div class="new">
+<button mat-raised-button class="hed" (click)="openDialogAgregar()" >Crear Cuenta</button>
 
-</div-->
+</div>
 
 
 

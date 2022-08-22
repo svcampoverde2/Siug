@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import {NavigationExtras, Router} from '@angular/router';
-//import { AgregarClienteComponent } from '../cliente/agregar-cliente/agregar-cliente.component';
+import { RegistroComponent } from '../registro/registro.component';
 //import { RecpPasswordComponent } from '../login/recp-password/recp-password.component';
 import { ClienteService } from '../cliente.service';
 
@@ -58,10 +58,10 @@ export class LoginComponent implements OnInit {
  this.user.userN.emit({dato: this.nuevo})
   }
   openDialogAgregar(){
-    /*this.dialog.close();
-   this.dialogRef.open(AgregarClienteComponent, {
+    this.dialog.close();
+   this.dialogRef.open(RegistroComponent, {
      width:'400px'
-    })/*/
+    })
 
 }
 recuperar(){

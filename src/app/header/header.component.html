@@ -57,9 +57,9 @@
         </mat-menu>
         <mat-menu class="hed" #bibliotecaV="matMenu">
           <button  class="hed"mat-menu-item >Bibliotecas</button>
-          <button  class="hed"mat-menu-item >Consulta de certificados</button>
-          <button  class="hed"mat-menu-item >Estadisticas de acceso</button>
-          <button  class="hed"mat-menu-item >Consulta navegacion</button>
+          <button *ngIf="rol==null"  class="hed"mat-menu-item >Consulta de certificados</button>
+          <button *ngIf="rol==null"  class="hed"mat-menu-item >Estadisticas de acceso</button>
+          <button *ngIf="rol==null"  class="hed"mat-menu-item >Consulta navegacion</button>
           <button  class="hed"mat-menu-item >Capacitaciones</button>
         </mat-menu>
         <mat-menu class="hed" #cserv="matMenu">
@@ -97,10 +97,10 @@
           <button  class="hed"mat-menu-item >Horarios nocturnos</button>
         </mat-menu>
         <mat-menu class="hed" #ayEconomica="matMenu">
-          <button  class="hed"mat-menu-item >Revision de solicitudes</button>
-          <button  class="hed"mat-menu-item >Supervision de solicitudes</button>
+          <button *ngIf="rol==null"  class="hed"mat-menu-item >Revision de solicitudes</button>
+          <button *ngIf="rol==null"  class="hed"mat-menu-item >Supervision de solicitudes</button>
           <button  class="hed"mat-menu-item >Aprobacion de solicitudes</button>
-          <button  class="hed"mat-menu-item >Reportes ayudas economicas</button>
+          <button *ngIf="rol==null"   class="hed"mat-menu-item >Reportes ayudas economicas</button>
         </mat-menu>
         <mat-menu class="hed" #registroHo="matMenu">
           <button  class="hed"mat-menu-item >Solicitud de homologacion de materia</button>
